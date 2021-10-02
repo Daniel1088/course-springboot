@@ -9,7 +9,7 @@ import com.example.demo.course.entities.User;
 //Entidade e Id
 
 
-public interface UserRepository extends JpaRepository<User, Long>{
+public interface OrderRepository extends JpaRepository<Order, Long>{
 	
 	
 

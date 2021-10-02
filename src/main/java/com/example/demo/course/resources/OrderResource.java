@@ -9,27 +9,27 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.course.entities.User;
-import com.example.demo.course.services.UserService;
+import com.example.demo.course.entities.Order;
+import com.example.demo.course.services.OrderService;
 
 @RestController
-@RequestMapping(value= "/users")/*/users é o caminho do recurso*/
-public class UserResource {
+@RequestMapping(value= "/orders")/*/users é o caminho do recurso*/
+public class OrderResource {
 	
 	@Autowired
-	private UserService service;
+	private OrderService service;
 	
 	@GetMapping/*Responde requisição do tipo GET do HTTP*/
-	public ResponseEntity<List<User>> findAll()/*ResponseEntity -> retorna respostas de requisições webs*/
+	public ResponseEntity<List<Order>> findAll()/*ResponseEntity -> retorna respostas de requisições webs*/
 	{
-		List<User> list = service.findAll();
+		List<Order> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
 	@GetMapping(value="/{id}")
-	public ResponseEntity<User> findById(@PathVariable Long id)//parámetro passado através da URL 
+	public ResponseEntity<Order> findById(@PathVariable Long id)//parámetro passado através da URL 
 	{
-		User obj = service.findById(id);
+		Order obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
